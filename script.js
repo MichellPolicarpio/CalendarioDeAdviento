@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 8 - Pancake */ { type: 'image', src: 'Regalo_Cupones/Dia8.png', size: 'large' },
         /* 9 - Luces navideñas */ "¡Que la noche brille! Este cupón es válido para una pijamada con maratón de tu saga de películas favorita. ¡Yo pongo las palomitas!",
         /* 10 - Galleta jengibre */ "¡Eres tan dulce como una galleta! Válido para una tarde de hornear galletas navideñas juntos (¡o comprarlas!).",
-        /* 11 - Campanas */ "¡Que suene el amor! Este cupón es válido para que pongas nuestra canción y bailemos juntos, sin importar dónde estemos.",
+        /* 11 - Campanas */ { type: 'image', src: 'Regalo_Cupones/Dia11.png' },
         /* 12 - Regalo especial */ "Tú eres mi mejor regalo. Este cupón es válido por un regalo sorpresa muy especial que tengo para ti. ¡La intriga es parte de la diversión!",
         /* 13 - Dulce de caramelo */ "¡Para endulzar tu día! Este cupón es válido por tu dulce o snack favorito. ¡Solo pídelo y aparecerá!",
         /* 14 - Duende con regalo */ "¡Un ayudante de Santa te trae esto! Este cupón es válido para que yo me encargue de una tarea o pendiente que no quieras hacer.",
