@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 11 - Campanas */ { type: 'image', src: 'Regalo_Cupones/Dia11.png' },
         /* 12 - Regalo especial */ "Tú eres mi mejor regalo. Este cupón es válido por un regalo sorpresa muy especial que tengo para ti. ¡La intriga es parte de la diversión!",
         /* 13 - Dulce de caramelo */ "¡Para endulzar tu día! Este cupón es válido por tu dulce o snack favorito. ¡Solo pídelo y aparecerá!",
-        /* 14 - Duende con regalo */ "¡Un ayudante de Santa te trae esto! Este cupón es válido para que yo me encargue de una tarea o pendiente que no quieras hacer.",
+        /* 14 - Duende con regalo */ { type: 'image', src: 'Regalo_Cupones/Dia14.png', size: 'large' },
         /* 15 - Corona de puerta */ "¡Bienvenido a nuestro hogar! Válido para una cena romántica en casa, preparada por mí con mucho amor.",
         /* 16 - Estrella fugaz */ "Pide un deseo. Este cupón es válido para una noche de mirar las estrellas, con mantas y una bebida caliente.",
         /* 17 - Vela navideña */ "Para iluminar nuestras noches. Este cupón es válido para una noche de juegos de mesa, solo tú y yo.",
