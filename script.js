@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ESTADO DE LA APLICACIÓN ---
     let allDaysUnlocked = false;
-    let isSoundOn = false;
+    let isSoundOn = true;
 
     // --- CONTENIDO ---
     const messages = [
@@ -143,4 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Al cargar la página, activar la música y el icono
+    backgroundMusic.volume = 0.5;
+    backgroundMusic.play().then(() => {
+        soundToggleButton.innerText = '🔊';
+    }).catch(() => {
+        // Si el navegador bloquea el autoplay, el usuario podrá activarlo manualmente
+        soundToggleButton.innerText = '🔇';
+        isSoundOn = false;
+    });
 }); 
