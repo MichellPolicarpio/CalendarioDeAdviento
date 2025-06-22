@@ -260,8 +260,41 @@ header {
     margin: 5px 0;
 }
 
+#modal-body p {
+    white-space: pre-wrap; /* Mantiene los saltos de línea en los textos largos */
+    margin: 0;
+}
+
+#modal-body img {
+    max-width: 100%;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+}
+
 @media(min-width: 769px) {
     #not-yet-modal .modal-content {
         margin-top: 100px;
     }
+}
+
+/* Estilo especial para cuando el modal muestra una imagen */
+#modal.image-modal .modal-content {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+#modal.large-image .modal-content {
+    max-width: 600px; /* Aumentado de 500px para el cupón grande */
+}
+
+/* Ajuste para el tamaño por defecto de los cupones */
+#modal.image-modal #modal-body img {
+    max-height: 70vh;
+}
+
+/* Aumentar el tamaño para la clase .large-image */
+#modal.large-image #modal-body img {
+    max-height: 95vh;
 } 

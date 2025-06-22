@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Modales
     const modal = document.getElementById('modal');
-    const modalMessage = document.getElementById('modal-message');
+    const modalBody = document.getElementById('modal-body');
     const closeButton = document.querySelector('#modal .close-button');
     const notYetModal = document.getElementById('not-yet-modal');
     const notYetCloseButton = document.querySelector('#not-yet-modal .close-button');
@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- CONTENIDO ---
     const messages = [
         /* 1 - Muñeco de nieve */ "¡Construyamos recuerdos juntos! Este cupón es válido para una tarde de películas navideñas y chocolate caliente.",
-        /* 2 - Calcetines */ "¡Válido por un par de *ugly socks* navideños! Para mantener tus pies calentitos, te aprecio mucho, Alejandro.",
+        /* 2 - Calcetines */ { type: 'image', src: 'Regalo_Cupones/Dia2.png' },
         /* 3 - Reno */ "¡Que la magia te guíe! Este cupón es válido para una salida nocturna a ver las luces de Navidad de la ciudad.",
         /* 4 - Corazón de chocolate */ "¡Un dulce para mi dulce! Válido por unos 'borrachitos', dulce típico de Puebla. ¡Espero que te encanten!",
         /* 5 - Árbol pino */ "¡Para decorar nuestro nido! Este cupón es válido para elegir juntos un nuevo adorno especial para nuestro árbol.",
         /* 6 - Santa */ "¡Ho, ho, ho! Santa dice que te has portado muy bien. Este cupón es válido por un deseo que yo te cumpliré.",
         /* 7 - Copo de nieve */ "No hay dos como tú. Este cupón es válido para una tarde de no hacer absolutamente nada, solo relajarnos juntos.",
-        /* 8 - Pancake */ "¡Un postre para ti! Válido para invitarte a comer tu postre favorito en una cafetería. Yo invito.",
+        /* 8 - Pancake */ { type: 'image', src: 'Regalo_Cupones/Dia8.png', size: 'large' },
         /* 9 - Luces navideñas */ "¡Que la noche brille! Este cupón es válido para una pijamada con maratón de tu saga de películas favorita. ¡Yo pongo las palomitas!",
         /* 10 - Galleta jengibre */ "¡Eres tan dulce como una galleta! Válido para una tarde de hornear galletas navideñas juntos (¡o comprarlas!).",
         /* 11 - Campanas */ "¡Que suene el amor! Este cupón es válido para que pongas nuestra canción y bailemos juntos, sin importar dónde estemos.",
@@ -53,7 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- FUNCIONES ---
     const openModalWithMessage = (content) => {
-        modalMessage.innerText = content;
+        // Limpiar clases anteriores
+        modal.classList.remove('image-modal', 'large-image');
+
+        if (typeof content === 'object' && content !== null && content.type === 'image') {
+            modalBody.innerHTML = `<img src="${content.src}" alt="Cupón del día">`;
+            modal.classList.add('image-modal');
+            if (content.size === 'large') {
+                modal.classList.add('large-image');
+            }
+        } else {
+            modalBody.innerHTML = `<p>${content}</p>`;
+        }
         modal.style.display = 'flex';
         navMenu.classList.remove('active'); // Cierra el menú hamburguesa si está abierto
     };
