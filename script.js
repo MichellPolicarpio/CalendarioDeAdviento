@@ -47,16 +47,75 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 23 - Muffin */ "¡Casi, casi es Navidad! Válido por un desayuno especial en la cama, preparado por mí.",
         /* 24 - Navidad */ "¡Feliz Nochebuena, mi amor! Hoy no hay cupones, solo mi amor incondicional y la alegría de pasar esta noche mágica contigo. Eres mi mejor regalo. ¡Te amo!"
     ];
-    const aboutContent = "Este Calendario de Adviento es un proyecto web creado con mucho cariño por Michell Alexis Policarpio Morán.\n\nEl hermoso diseño y las ilustraciones son obra de Alejandra Marín.\n\nPuedes encontrar el código de este proyecto en GitHub: MichellPolicarpio.";
-    const howToContent = "¡Bienvenido a este calendario de adviento digital!\n\nCada día, desde el 1 hasta el 24 de diciembre, se desbloqueará una nueva sorpresa. Simplemente haz clic en el número del día correspondiente para revelar un mensaje especial.\n\n¡Pero cuidado! No podrás abrir los días futuros antes de tiempo. ¡Disfruta de la cuenta atrás para la Navidad!";
-    const victorContent = "Alejandro, este calendario es más que un proyecto: es un pedacito de mi corazón hecho regalo para ti. Quiero que cada día te haga sentir tan especial como tú me haces sentir a mí. Felices fiestas, mi amor. ✨🎅";
+    const aboutContent = `
+        <div class="about-modal">
+            <h2>Acerca de</h2>
+            <div class="about-author">Michell Policarpio</div>
+            <div class="about-desc">Proyecto web personal hecho con dedicación y cariño.</div>
+            <strong style="color:#bfa14a;">Tecnologías utilizadas:</strong>
+            <ul class="about-tech-list">
+                <li><span class="tech-icon">🔵</span> HTML5</li>
+                <li><span class="tech-icon">🎨</span> CSS3</li>
+                <li><span class="tech-icon">✨</span> JavaScript (ES6+)</li>
+            </ul>
+        </div>
+    `;
+    const howToContent = `
+        <div class="howto-modal">
+            <h2>¿Cómo funciona esto?</h2>
+            <ol>
+                <li><span class="step-emoji">📅</span> Cada día de diciembre, haz clic en el número correspondiente del calendario.</li>
+                <li><span class="step-emoji">🎁</span> Descubre una sorpresa, dedicatoria o cupón especial.</li>
+                <li><span class="step-emoji">🔒</span> Solo puedes abrir los días que ya han llegado (o usa el candado para previsualizar).</li>
+                <li><span class="step-emoji">🎶</span> ¡Activa la música de fondo para una experiencia más mágica!</li>
+            </ol>
+        </div>
+    `;
+    const victorContent = `
+        <div class="victor-modal">
+            <span style="font-size:1.1em;">✨</span> <span class="victor-underline">Alejandro</span> ✨<br>
+            <span style="font-size:1.1em;">Este calendario es más que un proyecto:<br>
+            es un pedacito de mi corazón hecho regalo para ti.</span><br><br>
+            <span style="font-size:1.2em;">Quiero que cada día te haga sentir tan especial<br>como tú me haces sentir a mí.</span><br><br>
+            <span style="font-size:1.3em;">Felices fiestas, mi amor. 🎄❤️</span>
+        </div>
+    `;
 
     // --- FUNCIONES ---
-    const openModalWithMessage = (content) => {
+    function launchConfetti() {
+        const confettiColors = ['#FFD700', '#fffbe6', '#ffb347', '#ff6961', '#b4e7d9', '#f7cac9'];
+        const confettiContainer = document.getElementById('confetti-container');
+        for (let i = 0; i < 32; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            confetti.style.animationDelay = (Math.random() * 0.5) + 's';
+            confettiContainer.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 1800);
+        }
+    }
+
+    const openModalWithMessage = (content, isDay = false, modalType = null) => {
         // Limpiar clases anteriores
         modal.classList.remove('image-modal', 'large-image');
+        modalBody.className = '';
 
-        if (typeof content === 'object' && content !== null && content.type === 'image') {
+        if (modalType === 'about') {
+            modalBody.classList.add('about-modal');
+            modalBody.innerHTML = content;
+        } else if (modalType === 'howto') {
+            modalBody.classList.add('howto-modal');
+            modalBody.innerHTML = content;
+        } else if (modalType === 'victor') {
+            modalBody.classList.add('victor-modal');
+            modalBody.innerHTML = content;
+            // Animar el subrayado después de renderizar
+            setTimeout(() => {
+                const underline = modalBody.querySelector('.victor-underline');
+                if (underline) underline.classList.add('animated');
+            }, 50);
+        } else if (typeof content === 'object' && content !== null && content.type === 'image') {
             modalBody.innerHTML = `<img src="${content.src}" alt="Cupón del día">`;
             modal.classList.add('image-modal');
             if (content.size === 'large') {
@@ -67,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         modal.style.display = 'flex';
         navMenu.classList.remove('active'); // Cierra el menú hamburguesa si está abierto
+        if (isDay) launchConfetti();
     };
 
     const closeModal = () => {
@@ -86,17 +146,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('about-link').addEventListener('click', (e) => {
         e.preventDefault();
-        openModalWithMessage(aboutContent);
+        openModalWithMessage(aboutContent, false, 'about');
     });
 
     document.getElementById('how-to-link').addEventListener('click', (e) => {
         e.preventDefault();
-        openModalWithMessage(howToContent);
+        openModalWithMessage(howToContent, false, 'howto');
     });
 
     document.getElementById('victor-link').addEventListener('click', (e) => {
         e.preventDefault();
-        openModalWithMessage(victorContent);
+        openModalWithMessage(victorContent, false, 'victor');
     });
 
     soundToggleButton.addEventListener('click', (e) => {
@@ -148,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentMonth = today.getMonth();
 
             if (allDaysUnlocked || (currentMonth === 11 && currentDay >= day)) {
-                openModalWithMessage(messages[day - 1]);
+                openModalWithMessage(messages[day - 1], true);
             } else {
                 notYetModal.style.display = 'flex';
             }
