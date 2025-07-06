@@ -146,12 +146,11 @@ header {
 }
 
 .day-square {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
 }
 
 .day-square:hover {
@@ -159,10 +158,14 @@ header {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
+.day-square:focus {
+    outline: none;
+}
+
 .day-square img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
