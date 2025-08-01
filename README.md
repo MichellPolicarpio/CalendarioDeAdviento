@@ -33,15 +33,22 @@ Este proyecto fue construido desde cero utilizando únicamente las tecnologías 
 
 No se utilizó ningún framework o librería externa para mantenerlo ligero y sencillo.
 
-## 🧑‍💻 Créditos
-
-- **Desarrollo y Creación**: Michell Alexis Policarpio Morán
-- **Diseño e Ilustraciones**: Alejandra Marín
-
 ## 🌐 Demo en Vivo
 
-👉 [¡Haz clic aquí para ver el calendario en vivo!](https://michellpolicarpio.github.io/CalendarioDeAdviento/)
+👉 [¡Haz clic aquí para ver el calendario en vivo!](https://www.advientodevictor.lat/)
 
 ---
 
-Para ver el proyecto localmente, simplemente descarga o clona el repositorio y abre el archivo `index.html` en tu navegador preferido. 
+## ☁️ Despliegue Web
+
+El calendario fue desplegado en un dominio personalizado utilizando:
+
+- **GitHub Pages**: para alojar el sitio estático directamente desde el repositorio.
+- **Cloudflare**: para gestionar DNS, habilitar redirecciones y activar el certificado SSL.
+- **Namecheap**: como registrador del dominio `advientodevictor.lat`.
+
+El dominio funciona tanto con `www` como sin `www` y tiene HTTPS activo gracias al certificado gratuito de Cloudflare.
+
+---
+
+Para ver el proyecto localmente, simplemente descarga o clona el repositorio y abre el archivo `index.html` en tu navegador preferido.
