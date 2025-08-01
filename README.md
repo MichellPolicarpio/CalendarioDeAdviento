@@ -8,9 +8,7 @@ Este proyecto está en pleno desarrollo. La base funcional y el diseño principa
 
 ### Tareas Pendientes:
 - [ ] Definir y personalizar los 24 mensajes/regalos finales.
-- [ ] Implementar una playlist navideña en lugar de una sola canción de fondo.
-- [ ] Añadir una sección de "Galería de Recuerdos".
-- [ ] Realizar el despliegue final en un dominio web.
+- [ ] Realizar el despliegue final en un dominio web (dominio formal .com)
 
 ## ✨ Características Implementadas
 
