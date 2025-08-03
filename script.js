@@ -109,6 +109,24 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => createSoundEffect(1000, 0.3, 'sine'), 200);
     };
 
+    const playButtonClickSound = () => {
+        // Sonido para botones de navegación
+        createSoundEffect(400, 0.1, 'square');
+        setTimeout(() => createSoundEffect(600, 0.15, 'square'), 50);
+    };
+
+    const playToggleSound = () => {
+        // Sonido para botones de toggle (candado, sonido)
+        createSoundEffect(300, 0.1, 'triangle');
+        setTimeout(() => createSoundEffect(500, 0.1, 'triangle'), 100);
+    };
+
+    const playMenuSound = () => {
+        // Sonido para menú hamburguesa
+        createSoundEffect(200, 0.1, 'sawtooth');
+        setTimeout(() => createSoundEffect(400, 0.1, 'sawtooth'), 50);
+    };
+
     // --- CONTENIDO ---
     const messages = [
         /* 1 - Muñeco de nieve */ "¡Construyamos recuerdos juntos! Este cupón es válido para una tarde de películas navideñas y chocolate caliente.",
@@ -230,26 +248,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Menú de navegación
     hamburger.addEventListener('click', () => {
+        playMenuSound();
         navMenu.classList.toggle('active');
     });
 
     document.getElementById('about-link').addEventListener('click', (e) => {
         e.preventDefault();
+        playButtonClickSound();
         openModalWithMessage(aboutContent, false, 'about');
     });
 
     document.getElementById('how-to-link').addEventListener('click', (e) => {
         e.preventDefault();
+        playButtonClickSound();
         openModalWithMessage(howToContent, false, 'howto');
     });
 
     document.getElementById('victor-link').addEventListener('click', (e) => {
         e.preventDefault();
+        playButtonClickSound();
         openModalWithMessage(victorContent, false, 'victor');
     });
 
     soundToggleButton.addEventListener('click', (e) => {
         e.preventDefault();
+        playToggleSound();
         isSoundOn = !isSoundOn;
         if (isSoundOn) {
             backgroundMusic.play();
@@ -264,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Botón de bloqueo
     lockToggleButton.addEventListener('click', () => {
+        playToggleSound();
         allDaysUnlocked = !allDaysUnlocked;
         lockToggleButton.innerText = allDaysUnlocked ? '🔒' : '🔓';
     });
