@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Adviento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="ColorFondo.png" as="image">
+    <link rel="preload" href="TituloCalendarioAdviento.gif" as="image">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div id="stars-container"></div>
+    <header>
+        <nav class="navbar">
+            <button id="lock-toggle-button">🔓</button>
+            <div class="progress-counter">
+                <span id="days-unlocked">0</span>/24
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#" id="about-link" class="nav-link">Acerca de</a></li>
+                <li class="nav-item"><a href="#" id="how-to-link" class="nav-link">Cómo funciona esto</a></li>
+                <li class="nav-item"><a href="#" id="victor-link" class="nav-link">Mensaje a Victor</a></li>
+                <li class="nav-item"><a href="#" id="sound-toggle" class="nav-link">🔇</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+        <div class="garland" id="garland" aria-hidden="true"></div>
+        <div class="title-container">
+            <img src="TituloCalendarioAdviento.gif" alt="Título Calendario de Adviento" class="title-image">
+        </div>
+    </header>
+
+    <main id="calendar-container"></main>
+
+    <div id="modal" class="modal-hidden">
+        <div class="modal-content">
+            <span class="close-button" role="button" aria-label="Cerrar"></span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <div id="not-yet-modal" class="modal-hidden">
+        <div class="modal-content">
+            <span class="close-button" role="button" aria-label="Cerrar"></span>
+            <img src="galleta.gif" alt="Aún no es el día" loading="lazy" decoding="async" fetchpriority="low">
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <audio id="background-music" loop preload="metadata">
+        <source src="MusicaFondo/christmas-night-piano-274333.mp3" type="audio/mpeg">
+    </audio>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Calendario de Adviento. Creado con ❤️ por Michell Policarpio.</p>
+        <p>Este es un regalo personal, diseñado para traer una pequeña alegría cada día de diciembre.</p>
+    </footer>
+
+    <div id="confetti-container"></div>
+</body>
+</html> 
