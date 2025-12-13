@@ -710,13 +710,9 @@ header {
     font-family: 'Caveat', cursive;
     color: #fff;
     text-align: center;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 182, 193, 0.15));
-    padding: 25px;
-    border-radius: 15px;
-    border: 2px solid rgba(255, 215, 0, 0.3);
-    animation: poem-fadein 1s ease-out;
+    background: none;
+    padding: 10px;
 }
-
 .about-modal h2 {
     font-size: 2em;
     margin-bottom: 20px;
@@ -725,55 +721,32 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
 }
-
-.about-heart {
-    font-size: 3em;
-    margin: 15px 0;
-    animation: heartbeat 1.5s ease-in-out infinite;
+.about-modal ul.about-tech-list {
+    margin: 0.5em 0 0 1.2em;
+    padding: 0;
+    font-size: 1em;
+    list-style: none;
 }
-
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-.about-modal .about-desc {
-    margin: 20px 0;
-    font-size: 1.3em;
-    color: #fff;
-    line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.about-modal .about-author {
-    margin: 25px 0;
-    padding: 15px;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 182, 193, 0.2));
-    border-radius: 10px;
-    border: 1px solid rgba(255, 215, 0, 0.4);
-}
-
-.about-modal .about-made {
+.about-modal .tech-icon {
     font-size: 1.1em;
-    color: rgba(255, 255, 255, 0.9);
-    display: block;
-    margin-bottom: 8px;
+    margin-right: 0.4em;
 }
-
-.about-modal .about-name {
-    font-size: 1.6em;
+.about-modal li {
+    margin-bottom: 0.15em;
+    color: #888;
+}
+.about-modal .about-author {
     font-weight: 700;
     color: #FFD700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    display: block;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
-
-.about-modal .about-wish {
-    margin-top: 20px;
+.about-modal .about-desc {
+    margin-bottom: 15px;
     font-size: 1.2em;
-    color: rgba(255, 255, 255, 0.95);
-    font-style: italic;
-    line-height: 1.5;
+    color: #fff;
+    line-height: 1.6;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 

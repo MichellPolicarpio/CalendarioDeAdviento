@@ -350,17 +350,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutContent = `
         <div class="about-modal">
             <h2>✨ Acerca de este calendario ✨</h2>
-            <div class="about-heart"></div>
+            <div class="about-author">Hecho por: Michell Policarpio</div>
             <div class="about-desc">
-                Este calendario de adviento fue creado con mucho amor y dedicación como un regalo especial.
+                Este calendario de adviento fue creado con mucho amor y dedicación como un regalo especial. 
                 Cada día guarda una sorpresa pensada especialmente para ti.
             </div>
-            <div class="about-author">
-                <span class="about-made">Hecho con ❤️ por</span><br>
-                <span class="about-name">MAPM</span>
+            <div class="about-desc" style="margin-top: 20px;">
+                Es más que un proyecto: es un pedacito de mi corazón convertido en 24 días de magia, 
+                poemas, cupones y momentos especiales que quiero compartir contigo.
             </div>
-            <div class="about-wish">
-                Que cada día de diciembre te traiga una sonrisa y momentos especiales.
+            <div class="about-desc" style="margin-top: 20px; font-style: italic; color: #FFD700;">
+                Espero que cada día te traiga una sonrisa y te recuerde lo especial que eres para mí. 💝
             </div>
         </div>
     `;
