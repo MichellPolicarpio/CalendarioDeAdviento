@@ -356,8 +356,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 Cada día guarda una sorpresa pensada especialmente para ti.
             </div>
             <div class="about-author">
-                <span class="about-made">Hecho con amor por</span><br>
-                <span class="about-name">Michell</span>
+                <span class="about-made">Hecho con ❤️ por</span><br>
+                <span class="about-name">Michell Policarpio</span>
             </div>
             <div class="about-wish">
                 Que cada día de diciembre te traiga una sonrisa y momentos especiales.
