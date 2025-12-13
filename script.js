@@ -349,15 +349,19 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const aboutContent = `
         <div class="about-modal">
-            <h2>Acerca de</h2>
-            <div class="about-author">Michell Policarpio</div>
-            <div class="about-desc">Proyecto web personal hecho con dedicación y cariño.</div>
-            <strong style="color:#bfa14a;">Tecnologías utilizadas:</strong>
-            <ul class="about-tech-list">
-                <li><span class="tech-icon">🔵</span> HTML5</li>
-                <li><span class="tech-icon">🎨</span> CSS3</li>
-                <li><span class="tech-icon">✨</span> JavaScript (ES6+)</li>
-            </ul>
+            <h2>✨ Acerca de este calendario ✨</h2>
+            <div class="about-heart">💝</div>
+            <div class="about-desc">
+                Este calendario de adviento fue creado con mucho amor y dedicación como un regalo especial.
+                Cada día guarda una sorpresa pensada especialmente para ti.
+            </div>
+            <div class="about-author">
+                <span class="about-made">Hecho con amor por</span><br>
+                <span class="about-name">Michell</span>
+            </div>
+            <div class="about-wish">
+                Que cada día de diciembre te traiga una sonrisa y momentos especiales.
+            </div>
         </div>
     `;
     const howToContent = `
