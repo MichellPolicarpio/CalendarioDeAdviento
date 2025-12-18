@@ -3,34 +3,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const createStars = () => {
         const starsContainer = document.getElementById('stars-container');
         const starCount = 50; // Número de estrellas
-        
+
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
             star.className = 'star';
-            
+
             // Tamaño aleatorio
             const sizes = ['small', 'medium', 'large'];
             const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
             star.classList.add(randomSize);
-            
+
             // Posición aleatoria
             const x = Math.random() * 100;
             const y = Math.random() * 100;
             star.style.left = x + '%';
             star.style.top = y + '%';
-            
+
             // Algunas estrellas se mueven
             if (Math.random() > 0.7) {
                 star.classList.add('moving');
             }
-            
+
             // Retraso aleatorio para el parpadeo
             star.style.animationDelay = Math.random() * 3 + 's';
-            
+
             starsContainer.appendChild(star);
         }
     };
-    
+
     // Crear estrellas al cargar
     createStars();
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const calendarContainer = document.getElementById('calendar-container');
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
-    
+
     // Modales
     const modal = document.getElementById('modal');
     const modalBody = document.getElementById('modal-body');
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const counter = document.getElementById('days-unlocked');
         const count = allDaysUnlocked ? 24 : unlockedDays.size;
         counter.textContent = count;
-        
+
         // Animación del contador
         counter.style.transform = 'scale(1.2)';
         setTimeout(() => {
@@ -212,16 +212,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         const oscillator = audioContext.createOscillator();
         const gainNode = audioContext.createGain();
-        
+
         oscillator.connect(gainNode);
         gainNode.connect(audioContext.destination);
-        
+
         oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
         oscillator.type = type;
-        
+
         gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
         gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-        
+
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + duration);
     };
@@ -285,7 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`,
         /* 8 - Pancake */ { type: 'image', src: 'Regalo_Cupones/Dia8.png', size: 'large' },
         /* 9 - Luces navideñas */ "¡Que la noche brille! Este cupón es válido para una pijamada con maratón de tu saga de películas favorita. ¡Yo pongo las palomitas!",
-        /* 10 - Acertijo Galaxy Watch */ { type: 'html', html: `
+        /* 10 - Acertijo Galaxy Watch */ {
+            type: 'html', html: `
             <div class="poem-container theme-blue">
                 <h3 class="poem-title">DÍA 10</h3>
                 <div class="poem-content">
@@ -309,10 +310,61 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 15 - Corona de puerta */ "¡Bienvenido a nuestro hogar! Válido para una cena romántica en casa, preparada por mí con mucho amor.",
         /* 16 - Estrella fugaz */ "Pide un deseo. Este cupón es válido para una noche de mirar las estrellas, con mantas y una bebida caliente.",
         /* 17 - Vela navideña */ "Para iluminar nuestras noches. Este cupón es válido para una noche de juegos de mesa, solo tú y yo.",
-        /* 18 - Churros y chocolate */ "La combinación perfecta, como tú y yo. Válido por una salida a comer churros con chocolate.",
+        /* 18 - Acertijo misterioso */ {
+            type: 'html', html: `
+            <div class="poem-container theme-purple">
+                <h3 class="poem-title">🔮 ACERTIJO DEL DÍA 18 🔮</h3>
+                <div class="poem-content">
+                    <div class="verse" style="font-size: 1.15em; color: #FFD700; margin-bottom: 15px;">¿Qué soy?</div>
+                    <div class="verse">Soy dulce, pero no soy miel.</div>
+                    <div class="verse">Vengo envuelto en papel brillante.</div>
+                    <div class="verse">Me derrito con el calor de tus manos,</div>
+                    <div class="verse">y con tu sonrisa también.</div>
+                    <div class="verse" style="margin-top: 15px;">Nací de un grano que crece en tierras cálidas,</div>
+                    <div class="verse">soy el favorito de muchos corazones,</div>
+                    <div class="verse">y los enamorados me regalan con ilusiones.</div>
+                    <div class="verse" style="margin-top: 20px; font-size: 1.2em; color: #C792EA;">🎁 El día 21 descubrirás el secreto... 🎁</div>
+                </div>
+                <div class="poem-signature">Guarda este acertijo en tu mente...</div>
+            </div>
+        ` },
         /* 19 - Guantes */ "Para tus manos, que siempre cuidan las mías. Este cupón es válido para un paseo largo, agarrados de la mano.",
-        /* 20 - Música */ "Esta melodía me hace pensar en ti. Te regalo esta canción: [Nombre de la canción o enlace].",
-        /* 21 - Postre con canela */ "Un toque de especia para nuestra vida. Válido para que probemos juntos una receta nueva de algún postre exótico.",
+        /* 20 - Revelación del acertijo */ {
+            type: 'html', html: `
+            <div class="poem-container theme-purple">
+                <h3 class="poem-title">🍫 ¡RESPUESTA DEL ACERTIJO! 🍫</h3>
+                <div class="poem-content">
+                    <div class="verse" style="font-size: 1.2em; color: #FFD700; margin-bottom: 15px;">¿Recuerdas el acertijo del día 18?</div>
+                    <div class="verse">Soy dulce, pero no soy miel...</div>
+                    <div class="verse">Vengo envuelto en papel brillante...</div>
+                    <div class="verse">Me derrito con el calor de tus manos...</div>
+                    <div class="verse" style="margin-top: 20px; font-size: 1.3em; color: #C792EA;">✨ ¡La respuesta es: CHOCOLATES! ✨</div>
+                    <div class="verse" style="margin-top: 15px;">Hoy te regalo una caja de chocolates,</div>
+                    <div class="verse">porque tú endulzas mi vida cada día.</div>
+                </div>
+                <div class="poem-signature">Con todo mi amor... 🎁💝</div>
+            </div>
+        ` },
+        /* 21 - Regalo 11 meses */ {
+            type: 'html', html: `
+            <div class="poem-container theme-teal">
+                <h3 class="poem-title">💝 11 MESES JUNTOS 💝</h3>
+                <div class="poem-content">
+                    <div class="verse" style="font-size: 1.15em; color: #FFD700; margin-bottom: 15px;">Hoy celebramos 11 meses de amor...</div>
+                    <div class="verse">Y para ti tengo algo especial:</div>
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia21.webp">
+                        <img src="Regalo_Cupones/Dia21.png" alt="Regalo misterioso" style="max-width: 200px; margin: 20px auto; display: block; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse" style="margin-top: 15px; font-style: italic;">En su interior habitan criaturas</div>
+                    <div class="verse" style="font-style: italic;">que ronronean bajo la luna,</div>
+                    <div class="verse" style="font-style: italic;">con bigotes curiosos y ojos brillantes,</div>
+                    <div class="verse" style="font-style: italic;">te llevarán a sueños encantados.</div>
+                    <div class="verse" style="margin-top: 20px; font-size: 1.1em; color: #7AE582;">🎁 Desenvuélvelo y descubre el misterio... 🎁</div>
+                </div>
+                <div class="poem-signature">Felices 11 meses, mi amor 🐱🌙</div>
+            </div>
+        ` },
         /* 22 - Esfera de nieve */ "Nuestro pequeño mundo en una esfera. Este cupón es válido para una tarde de ver nuestras fotos favoritas del año.",
         /* 23 - Muffin */ "¡Casi, casi es Navidad! Válido por un desayuno especial en la cama, preparado por mí.",
         /* 24 - Bolsa misteriosa */ { type: 'mystery-bag', message: "🎁 ¡FELIZ NOCHEBUENA! 🎁\n\nHas llegado al final del calendario, mi amor. Hoy te espera algo muy especial: una bolsa misteriosa que guarda un regalo pensado especialmente para ti.\n\nPero esta bolsa tiene sus propias reglas... tiene un momento mágico para abrirse. Solo cuando el reloj marque las 11:42 PM podrás descubrir qué hay dentro.\n\nLa paciencia es parte del misterio. ¡Espera el momento perfecto!" }
@@ -321,30 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Selector de mensaje (permite override creativo sin tocar el array original)
     const getMessage = (day) => {
         const arr = (window && window.__overrideMessages) ? window.__overrideMessages : messages;
-        if (day === 21) {
-            return {
-                type: 'html',
-                html: `
-                    <div class="poem-container">
-                        <h3 class="poem-title">DÍA 21 — Puentes</h3>
-                        <div class="poem-content">
-                            <div class="verse">Once lunas nos miran,</div>
-                            <div class="verse">Desde Veracruz dibujo tu horizonte,</div>
-                            <div class="verse">Texas me responde con cielo inmenso.</div>
-                            <div class="verse">La distancia es un mapa, no una muralla,</div>
-                            <div class="verse">y nuestras voces, puentes sobre el Golfo.</div>
-                            <div class="verse">Tus 38 guardan mapas,</div>
-                            <div class="verse">mis 23 trazan rutas.</div>
-                            <div class="verse">Si falta abrazo, sobra fe de encontrarnos pronto.</div>
-                            <div class="verse">Y si hay distancia, la llenamos de llamados.</div>
-                            <div class="verse">Hoy no hay cupón, hay certeza:</div>
-                            <div class="verse">lo nuestro viaja sin pasaporte.</div>
-                        </div>
-                        <div class="poem-signature">Con amor, de Veracruz a Texas.</div>
-                    </div>
-                `
-            };
-        }
         return arr[day - 1];
     };
     const aboutContent = `
@@ -517,7 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 15: ["Si estamos lejos:", "cena a distancia con el mismo menú."],
                 16: ["Si estamos lejos:", "miramos la misma luna por videollamada."],
                 17: ["Versión en línea:", "noche de juegos por videollamada."],
-                18: ["Si estamos lejos:", "churros a domicilio y videollamada."],
+                18: ["Pista extra:", "Es un regalo que se puede compartir... "],
                 19: ["Si estamos lejos:", "paseo en llamada, cada uno en su ciudad."],
                 20: ["Frase en polaco:", "Kocham Cię (Te amo)."],
                 22: ["Geografía juntos:", "Mapa compartido con sitios por visitar (hoy: Cracovia)."],
@@ -557,7 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- EVENT LISTENERS ---
-    
+
     // Menú de navegación
     hamburger.addEventListener('click', () => {
         playMenuSound();
@@ -600,17 +628,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Botón de bloqueo
     lockToggleButton.addEventListener('click', () => {
         playToggleSound();
-        
+
         // Si ya está desbloqueado, simplemente bloquearlo
         if (allDaysUnlocked) {
             allDaysUnlocked = false;
             lockToggleButton.innerText = '🔓';
             return;
         }
-        
+
         // Si está bloqueado, pedir código para desbloquear
         const code = prompt('🔐 Ingresa el código para previsualizar todos los días:');
-        
+
         if (code === '6276') {
             allDaysUnlocked = true;
             lockToggleButton.innerText = '🔒';
@@ -653,7 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day-square');
         daySquare.dataset.day = i;
-        
+
         // Aplicar retraso escalonado para la animación (más rápido)
         daySquare.style.animationDelay = `${i * 0.05}s`;
 
@@ -663,7 +691,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dayImage.decoding = 'async';
         dayImage.setAttribute('fetchpriority', 'low');
         dayImage.src = `Iconos_gif_dias/${i}.gif`;
-        
+
         daySquare.appendChild(dayImage);
         calendarContainer.appendChild(daySquare);
 
@@ -689,7 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const today = new Date();
         const currentDay = today.getDate();
         const currentMonth = today.getMonth();
-        
+
         // Desbloqueo por días de diciembre (mes 11 en JS)
         if (currentMonth === 11 && currentDay >= i) {
             daySquare.classList.add('available');
@@ -711,11 +739,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const currentMinute = now.getMinutes();
                     const targetHour = 23; // 11 PM
                     const targetMinute = 42; // 42 minutos
-                    
+
                     // Verificar si es 11:42 PM o después (o si todos los días están desbloqueados)
-                    const isTimeToOpen = allDaysUnlocked || 
+                    const isTimeToOpen = allDaysUnlocked ||
                         (currentHour > targetHour || (currentHour === targetHour && currentMinute >= targetMinute));
-                    
+
                     if (isTimeToOpen) {
                         playUnlockSound();
                         unlockDay(day);
@@ -771,7 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 l.as = 'image';
                 l.href = href;
                 document.head.appendChild(l);
-            } catch(_) {}
+            } catch (_) { }
         };
         if (day >= 1 && day <= 24 && isSeason) {
             linkPrefetch(`Iconos_gif_dias/${day}.gif`);
@@ -785,7 +813,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Service Worker: registro para cachear estáticos ---
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js').catch(() => {});
+            navigator.serviceWorker.register('/sw.js').catch(() => { });
         });
     }
 
@@ -852,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             video.load();
-                            video.play().catch(() => {});
+                            video.play().catch(() => { });
                             obs.unobserve(entry.target);
                         }
                     });
@@ -871,7 +899,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Override creativo de mensajes (dedicatorias y tarjetas animadas)
     window.__overrideMessages = [
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 1 — Comienzo</h3>
                 <div class="poem-content">
@@ -886,7 +915,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         ` },
         { type: 'image', src: 'Regalo_Cupones/Dia2.png' },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 3 — Luces</h3>
                 <div class="poem-content">
@@ -900,7 +930,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">¿Vamos a ver luces?</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 4 — Dulzura</h3>
                 <div class="poem-content">
@@ -914,7 +945,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Tú eliges el antojo.</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 5 — Nuestro rincón</h3>
                 <div class="poem-content">
@@ -926,7 +958,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Lo guardamos cada año.</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 6 — Deseo</h3>
                 <div class="poem-content">
@@ -958,7 +991,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="poem-signature">Te quiero, Vic.</div>
         </div>`,
         { type: 'image', src: 'Regalo_Cupones/Dia8.png', size: 'large' },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 9 — Pijamada</h3>
                 <div class="poem-content">
@@ -970,7 +1004,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Yo llevo las ganas.</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container theme-blue">
                 <h3 class="poem-title">DÍA 10</h3>
                 <div class="poem-content">
@@ -989,7 +1024,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ` },
         { type: 'image', src: 'Regalo_Cupones/Dia11.png' },
         { type: 'image', src: 'Regalo_Cupones/Dia12.png', size: 'large' },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 13 — Detalle</h3>
                 <div class="poem-content">
@@ -1002,7 +1038,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         ` },
         { type: 'image', src: 'Regalo_Cupones/Dia14.png', size: 'large' },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 15 — Cena</h3>
                 <div class="poem-content">
@@ -1014,7 +1051,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Yo preparo, tú apruebas.</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 16 — Estrellas</h3>
                 <div class="poem-content">
@@ -1026,7 +1064,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Yo cuento las fugaces.</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 17 — Juegos</h3>
                 <div class="poem-content">
@@ -1038,19 +1077,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Pierde quien no te ama.</div>
             </div>
         ` },
-        { type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 18 — Churros</h3>
+        {
+            type: 'html', html: `
+            <div class="poem-container theme-purple">
+                <h3 class="poem-title">🔮 DÍA 18 — Acertijo 🔮</h3>
                 <div class="poem-content">
-                    <div class="verse">Chocolate caliente,</div>
-                    <div class="verse">manos tibias.</div>
-                    <div class="verse">Cupón: salida por churros,</div>
-                    <div class="verse">y besos con azúcar.</div>
+                    <div class="verse">Un misterio dulce te espera,</div>
+                    <div class="verse">envuelto y escondido.</div>
+                    <div class="verse">Resuelve el acertijo,</div>
+                    <div class="verse">y el 21 será revelado.</div>
                 </div>
-                <div class="poem-signature">Plan perfecto.</div>
+                <div class="poem-signature">Paciencia, mi amor...</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 19 — Paseo</h3>
                 <div class="poem-content">
@@ -1062,31 +1103,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Sin prisa.</div>
             </div>
         ` },
-        { type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 20 — Canción</h3>
+        {
+            type: 'html', html: `
+            <div class="poem-container theme-purple">
+                <h3 class="poem-title">🍫 DÍA 20 — ¡Revelación! 🍫</h3>
                 <div class="poem-content">
-                    <div class="verse">Hay música en tu risa,</div>
-                    <div class="verse">y calma en tu voz.</div>
-                    <div class="verse">Cupón: te dedico una canción,</div>
-                    <div class="verse">y la bailamos juntos.</div>
+                    <div class="verse">El acertijo tenía respuesta,</div>
+                    <div class="verse">y hoy te la revelo:</div>
+                    <div class="verse">¡CHOCOLATES para ti!</div>
+                    <div class="verse">Porque endulzas mi vida.</div>
                 </div>
-                <div class="poem-signature">El ritmo lo pones tú.</div>
+                <div class="poem-signature">Con amor... 💝</div>
             </div>
         ` },
-        { type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 21 — Receta</h3>
+        {
+            type: 'html', html: `
+            <div class="poem-container theme-teal">
+                <h3 class="poem-title">💝 DÍA 21 — 11 Meses 💝</h3>
                 <div class="poem-content">
-                    <div class="verse">Picamos risas,</div>
-                    <div class="verse">mezclamos abrazos.</div>
-                    <div class="verse">Cupón: probar una receta,</div>
-                    <div class="verse">que tenga tu toque.</div>
+                    <div class="verse">Hoy celebramos 11 meses juntos,</div>
+                    <div class="verse">y hay algo envuelto para ti.</div>
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia21.webp">
+                        <img src="Regalo_Cupones/Dia21.png" alt="Regalo misterioso" style="max-width: 180px; margin: 15px auto; display: block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse">Criaturas que ronronean</div>
+                    <div class="verse">te esperan en su interior...</div>
                 </div>
-                <div class="poem-signature">Chef corazón.</div>
+                <div class="poem-signature">¿Qué será? 🎁🐱</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 22 — Recuerdos</h3>
                 <div class="poem-content">
@@ -1098,7 +1146,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Nuestra colección.</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container">
                 <h3 class="poem-title">DÍA 23 — Desayuno</h3>
                 <div class="poem-content">
@@ -1110,7 +1159,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Yo llevo la bandeja.</div>
             </div>
         ` },
-        { type: 'html', html: `
+        {
+            type: 'html', html: `
             <div class="poem-container theme-purple">
                 <h3 class="poem-title">🎁 DÍA 24 — BOLSA MISTERIOSA 🎁</h3>
                 <div class="poem-content">
