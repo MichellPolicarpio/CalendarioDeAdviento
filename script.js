@@ -72,16 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let isSoundOn = true;
     let unlockedDays = new Set();
 
-    // --- CURSOR TRAIL (chispas) ---
+    // --- CURSOR TRAIL (chispas) - SOLO DESKTOP ---
     (function cursorTrail() {
         const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
         const container = document.getElementById('confetti-container');
-        if (!container || prefersReduced) return;
+        if (!container || prefersReduced || isMobile) return; // Desactivar en móviles
 
         const colors = ['#FFFFFF', '#FFD166', '#FF5A5A', '#7AE582', '#6EC6FF', '#C792EA'];
         let last = 0;
-        const minDeltaMs = 22; // limitador de tasa
-        const maxSparks = 140; // limite total para performance
+        const minDeltaMs = 30; // más lento para mejor performance
+        const maxSparks = 80; // reducido para performance
 
         const spawnSpark = (x, y) => {
             const s = document.createElement('div');
@@ -112,18 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const x = ev.clientX;
             const y = ev.clientY;
-            // varias chispas por evento para densidad suave
             spawnSpark(x, y);
-            if (Math.random() > 0.5) spawnSpark(x + (Math.random() * 12 - 6), y + (Math.random() * 12 - 6));
         };
 
         window.addEventListener('mousemove', handler, { passive: true });
-        // soporte tactil
-        window.addEventListener('touchmove', (e) => {
-            if (!e.touches || !e.touches[0]) return;
-            const t = e.touches[0];
-            handler({ clientX: t.clientX, clientY: t.clientY });
-        }, { passive: true });
     })();
 
     // --- CLICK BURST (estallido al hacer clic) ---
@@ -132,11 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('confetti-container');
         if (!container || prefersReduced) return;
 
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
         const colors = ['#FFFFFF', '#FFD166', '#FF5A5A', '#7AE582', '#6EC6FF', '#C792EA'];
-        const maxNodes = 220;
+        const maxNodes = isMobile ? 60 : 220; // Menos en móviles
+        const burstCount = isMobile ? 8 : 18; // Menos partículas en móviles
 
-        const spawnBurst = (x, y, n = 18) => {
-            const radiusMin = 24, radiusMax = 60;
+        const spawnBurst = (x, y, n = burstCount) => {
+            const radiusMin = 24, radiusMax = isMobile ? 40 : 60;
             for (let i = 0; i < n; i++) {
                 const el = document.createElement('div');
                 el.className = 'cursor-burst';
@@ -163,7 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         window.addEventListener('click', (e) => {
-            spawnBurst(e.clientX, e.clientY, 18 + Math.floor(Math.random() * 8));
+            const count = isMobile ? burstCount : (burstCount + Math.floor(Math.random() * 8));
+            spawnBurst(e.clientX, e.clientY, count);
         }, { passive: true });
     })();
 
@@ -467,11 +463,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('confetti-container');
         if (!container) return;
 
-        // Rango de parámetros (con valores por defecto)
-        const countMin = (opts.countRange && opts.countRange[0]) ?? 16;
-        const countMax = (opts.countRange && opts.countRange[1]) ?? 31;
-        const nextMin = (opts.burstIntervalRange && opts.burstIntervalRange[0]) ?? 140; // ms
-        const nextMax = (opts.burstIntervalRange && opts.burstIntervalRange[1]) ?? 300; // ms
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+        // Valores reducidos para móviles
+        const mobileMultiplier = isMobile ? 0.4 : 1;
+
+        // Rango de parámetros (con valores por defecto, reducidos en móviles)
+        const countMin = Math.floor(((opts.countRange && opts.countRange[0]) ?? 16) * mobileMultiplier);
+        const countMax = Math.floor(((opts.countRange && opts.countRange[1]) ?? 31) * mobileMultiplier);
+        const nextMin = ((opts.burstIntervalRange && opts.burstIntervalRange[0]) ?? 140) * (isMobile ? 2 : 1); // Más lento en móviles
+        const nextMax = ((opts.burstIntervalRange && opts.burstIntervalRange[1]) ?? 300) * (isMobile ? 2 : 1);
         const sizeMin = (opts.sizeRange && opts.sizeRange[0]) ?? 3; // px
         const sizeMax = (opts.sizeRange && opts.sizeRange[1]) ?? 8; // px
         const driftMin = (opts.driftRange && opts.driftRange[0]) ?? -40; // px
