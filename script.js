@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 22 - Taza Quimixto */ {
             type: 'html', html: `
             <div class="poem-container theme-blue">
-                <h3 class="poem-title">☕ DÍA 22 ☕</h3>
+                <h3 class="poem-title">🥥 DÍA 22 🥥</h3>
                 <div class="poem-content">
                     <picture>
                         <source type="image/webp" srcset="Regalo_Cupones/Dia22.webp">
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="verse" style="font-style: italic;">Hace exactamente un mes vivimos esa aventura juntos.</div>
                     <div class="verse" style="margin-top: 15px;">Cada café que tomes, recuerda ese día mágico.</div>
                 </div>
-                <div class="poem-signature">Un recuerdo para siempre 🌊✨</div>
+                <div class="poem-signature">Un recuerdo para siempre 🥥💧</div>
             </div>
         ` },
         /* 23 - Arbolito tabasqueño */ {
@@ -1142,7 +1142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             type: 'html', html: `
             <div class="poem-container theme-blue">
-                <h3 class="poem-title">☕ DÍA 22 ☕</h3>
+                <h3 class="poem-title">🥥 DÍA 22 🥥</h3>
                 <div class="poem-content">
                     <picture>
                         <source type="image/webp" srcset="Regalo_Cupones/Dia22.webp">
@@ -1151,7 +1151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="verse" style="margin-top: 15px;">Taza con nuestro recuerdo 💙</div>
                     <div class="verse">Quimixto, Jalisco - hace un mes</div>
                 </div>
-                <div class="poem-signature">🌊✨</div>
+                <div class="poem-signature">🥥💧</div>
             </div>
         ` },
         {
