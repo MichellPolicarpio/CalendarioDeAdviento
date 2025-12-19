@@ -365,7 +365,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Felices 11 meses, mi amor 🐱🌙</div>
             </div>
         ` },
-        /* 22 - Esfera de nieve */ "Nuestro pequeño mundo en una esfera. Este cupón es válido para una tarde de ver nuestras fotos favoritas del año.",
+        /* 22 - Taza Quimixto */ {
+            type: 'html', html: `
+            <div class="poem-container theme-blue">
+                <h3 class="poem-title">☕ DÍA 22 ☕</h3>
+                <div class="poem-content">
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia22.webp">
+                        <img src="Regalo_Cupones/Dia22.png" alt="Taza con recuerdo" style="max-width: 280px; margin: 15px auto; display: block; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse" style="margin-top: 20px; font-size: 1.1em;">Una taza con nuestro recuerdo especial 💙</div>
+                    <div class="verse" style="margin-top: 10px;">La cascada de Quimixto, Jalisco</div>
+                    <div class="verse" style="font-style: italic;">Hace exactamente un mes vivimos esa aventura juntos.</div>
+                    <div class="verse" style="margin-top: 15px;">Cada café que tomes, recuerda ese día mágico.</div>
+                </div>
+                <div class="poem-signature">Un recuerdo para siempre 🌊✨</div>
+            </div>
+        ` },
         /* 23 - Arbolito tabasqueño */ {
             type: 'html', html: `
             <div class="poem-container theme-green">
@@ -1126,15 +1142,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ` },
         {
             type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 22 — Recuerdos</h3>
+            <div class="poem-container theme-blue">
+                <h3 class="poem-title">☕ DÍA 22 ☕</h3>
                 <div class="poem-content">
-                    <div class="verse">Abramos el álbum,</div>
-                    <div class="verse">revivamos momentos.</div>
-                    <div class="verse">Cupón: tarde de fotos,</div>
-                    <div class="verse">y planes para nuevos.</div>
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia22.webp">
+                        <img src="Regalo_Cupones/Dia22.png" alt="Taza con recuerdo" style="max-width: 250px; margin: 15px auto; display: block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse" style="margin-top: 15px;">Taza con nuestro recuerdo 💙</div>
+                    <div class="verse">Quimixto, Jalisco - hace un mes</div>
                 </div>
-                <div class="poem-signature">Nuestra colección.</div>
+                <div class="poem-signature">🌊✨</div>
             </div>
         ` },
         {
