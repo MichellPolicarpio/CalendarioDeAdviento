@@ -579,7 +579,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 18: ["Pista extra:", "Es un regalo que se puede compartir... "],
                 19: ["Si estamos lejos:", "paseo en llamada, cada uno en su ciudad."],
                 20: ["Frase en polaco:", "Kocham Cię (Te amo)."],
-                22: ["Geografía juntos:", "Mapa compartido con sitios por visitar (hoy: Cracovia)."],
                 24: ["Wesołych Świąt! (¡Felices Fiestas!)"]
             };
             const lines = extras[lastOpenedDay];
