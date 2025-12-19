@@ -303,7 +303,23 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 12 - Duendes Victor */ { type: 'image', src: 'Regalo_Cupones/Dia12.png', size: 'large' },
         /* 13 - Dulce de caramelo */ "¡Para endulzar tu día! Este cupón es válido por tu dulce o snack favorito. ¡Solo pídelo y aparecerá!",
         /* 14 - Duende con regalo */ { type: 'image', src: 'Regalo_Cupones/Dia14.png', size: 'large' },
-        /* 15 - Corona de puerta */ "¡Bienvenido a nuestro hogar! Válido para una cena romántica en casa, preparada por mí con mucho amor.",
+        /* 15 - Oso para oficina */ {
+            type: 'html', html: `
+            <div class="poem-container theme-orange">
+                <h3 class="poem-title">🧸 DÍA 15 🧸</h3>
+                <div class="poem-content">
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia15.webp">
+                        <img src="Regalo_Cupones/Dia15.png" alt="Osito de regalo" style="max-width: 250px; margin: 15px auto; display: block; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse" style="margin-top: 20px; font-size: 1.1em;">Este osito es para tu oficina 🏢</div>
+                    <div class="verse">Un detallito que te conecte conmigo</div>
+                    <div class="verse">cada vez que lo veas.</div>
+                    <div class="verse" style="margin-top: 15px; font-style: italic; color: #FFD700;">¡Prométeme que le pondrás un nombre! 💕</div>
+                </div>
+                <div class="poem-signature">Con todo mi amor 🧸❤️</div>
+            </div>
+        ` },
         /* 16 - Cupón imagen */ { type: 'image', src: 'Regalo_Cupones/Dia16.png' },
         /* 17 - Cupón imagen */ { type: 'image', src: 'Regalo_Cupones/Dia17.png' },
         /* 18 - Acertijo misterioso */ {
@@ -575,7 +591,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const extras = {
                 3: ["Si estamos lejos hoy:", "paseo virtual por Cracovia."],
                 9: ["Si estamos lejos:", "verla en simultáneo por videollamada."],
-                15: ["Si estamos lejos:", "cena a distancia con el mismo menú."],
                 16: ["📺 Pendiente:", "¡Ver juntos la 5ta temporada de Stranger Things!"],
                 18: ["Pista extra:", "Es un regalo que se puede compartir... "],
                 19: ["Si estamos lejos:", "paseo en llamada, cada uno en su ciudad."],
@@ -1071,15 +1086,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { type: 'image', src: 'Regalo_Cupones/Dia14.png', size: 'large' },
         {
             type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 15 — Cena</h3>
+            <div class="poem-container theme-orange">
+                <h3 class="poem-title">🧸 DÍA 15 🧸</h3>
                 <div class="poem-content">
-                    <div class="verse">Mesa sencilla,</div>
-                    <div class="verse">luz bajita.</div>
-                    <div class="verse">Cupón: cena en casa,</div>
-                    <div class="verse">y baile en la cocina.</div>
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia15.webp">
+                        <img src="Regalo_Cupones/Dia15.png" alt="Osito" style="max-width: 200px; margin: 12px auto; display: block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse" style="margin-top: 15px;">Para tu oficina 🏢</div>
+                    <div class="verse">Un detallito que te conecte conmigo.</div>
+                    <div class="verse" style="font-style: italic; color: #FFD700;">¡Prométeme ponerle nombre! 💕</div>
                 </div>
-                <div class="poem-signature">Yo preparo, tú apruebas.</div>
+                <div class="poem-signature">🧸❤️</div>
             </div>
         ` },
         { type: 'image', src: 'Regalo_Cupones/Dia16.png' },
