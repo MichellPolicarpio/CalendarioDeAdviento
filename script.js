@@ -308,8 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
         /* 13 - Dulce de caramelo */ "¡Para endulzar tu día! Este cupón es válido por tu dulce o snack favorito. ¡Solo pídelo y aparecerá!",
         /* 14 - Duende con regalo */ { type: 'image', src: 'Regalo_Cupones/Dia14.png', size: 'large' },
         /* 15 - Corona de puerta */ "¡Bienvenido a nuestro hogar! Válido para una cena romántica en casa, preparada por mí con mucho amor.",
-        /* 16 - Estrella fugaz */ "Pide un deseo. Este cupón es válido para una noche de mirar las estrellas, con mantas y una bebida caliente.",
-        /* 17 - Vela navideña */ "Para iluminar nuestras noches. Este cupón es válido para una noche de juegos de mesa, solo tú y yo.",
+        /* 16 - Cupón imagen */ { type: 'image', src: 'Regalo_Cupones/Dia16.png' },
+        /* 17 - Cupón imagen */ { type: 'image', src: 'Regalo_Cupones/Dia17.png' },
         /* 18 - Acertijo misterioso */ {
             type: 'html', html: `
             <div class="poem-container theme-purple">
@@ -543,8 +543,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 3: ["Si estamos lejos hoy:", "paseo virtual por Cracovia."],
                 9: ["Si estamos lejos:", "verla en simultáneo por videollamada."],
                 15: ["Si estamos lejos:", "cena a distancia con el mismo menú."],
-                16: ["Si estamos lejos:", "miramos la misma luna por videollamada."],
-                17: ["Versión en línea:", "noche de juegos por videollamada."],
+                16: ["📺 Pendiente:", "¡Ver juntos la 5ta temporada de Stranger Things!"],
                 18: ["Pista extra:", "Es un regalo que se puede compartir... "],
                 19: ["Si estamos lejos:", "paseo en llamada, cada uno en su ciudad."],
                 20: ["Frase en polaco:", "Kocham Cię (Te amo)."],
@@ -1051,32 +1050,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="poem-signature">Yo preparo, tú apruebas.</div>
             </div>
         ` },
-        {
-            type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 16 — Estrellas</h3>
-                <div class="poem-content">
-                    <div class="verse">Una manta,</div>
-                    <div class="verse">dos manos.</div>
-                    <div class="verse">Cupón: pedir deseos,</div>
-                    <div class="verse">mirando el cielo juntos.</div>
-                </div>
-                <div class="poem-signature">Yo cuento las fugaces.</div>
-            </div>
-        ` },
-        {
-            type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 17 — Juegos</h3>
-                <div class="poem-content">
-                    <div class="verse">Risas y pequeños retos,</div>
-                    <div class="verse">victorias compartidas.</div>
-                    <div class="verse">Cupón: noche de juegos,</div>
-                    <div class="verse">solo tú y yo.</div>
-                </div>
-                <div class="poem-signature">Pierde quien no te ama.</div>
-            </div>
-        ` },
+        { type: 'image', src: 'Regalo_Cupones/Dia16.png' },
+        { type: 'image', src: 'Regalo_Cupones/Dia17.png' },
         {
             type: 'html', html: `
             <div class="poem-container theme-purple">
