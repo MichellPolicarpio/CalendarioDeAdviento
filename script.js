@@ -366,7 +366,23 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         ` },
         /* 22 - Esfera de nieve */ "Nuestro pequeño mundo en una esfera. Este cupón es válido para una tarde de ver nuestras fotos favoritas del año.",
-        /* 23 - Muffin */ "¡Casi, casi es Navidad! Válido por un desayuno especial en la cama, preparado por mí.",
+        /* 23 - Arbolito tabasqueño */ {
+            type: 'html', html: `
+            <div class="poem-container theme-green">
+                <h3 class="poem-title">🌱 DÍA 23 🌱</h3>
+                <div class="poem-content">
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia23.webp">
+                        <img src="Regalo_Cupones/Dia23.png" alt="Arbolito tabasqueño" style="max-width: 280px; margin: 15px auto; display: block; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse" style="margin-top: 20px; font-size: 1.1em;">Te regalo con mucho amor y dedicación</div>
+                    <div class="verse">este arbolito tabasqueño 🌳</div>
+                    <div class="verse" style="margin-top: 15px; font-style: italic;">Ojalá brote vida en tus terrenos</div>
+                    <div class="verse" style="font-style: italic;">y crezca tan fuerte como nuestro amor.</div>
+                </div>
+                <div class="poem-signature">Con todo mi corazón 💚</div>
+            </div>
+        ` },
         /* 24 - Bolsa misteriosa */ { type: 'mystery-bag', message: "🎁 ¡FELIZ NOCHEBUENA! 🎁\n\nHas llegado al final del calendario, mi amor. Hoy te espera algo muy especial: una bolsa misteriosa que guarda un regalo pensado especialmente para ti.\n\nPero esta bolsa tiene sus propias reglas... tiene un momento mágico para abrirse. Solo cuando el reloj marque las 11:42 PM podrás descubrir qué hay dentro.\n\nLa paciencia es parte del misterio. ¡Espera el momento perfecto!" }
     ];
 
@@ -1123,15 +1139,18 @@ document.addEventListener('DOMContentLoaded', () => {
         ` },
         {
             type: 'html', html: `
-            <div class="poem-container">
-                <h3 class="poem-title">DÍA 23 — Desayuno</h3>
+            <div class="poem-container theme-green">
+                <h3 class="poem-title">🌱 DÍA 23 🌱</h3>
                 <div class="poem-content">
-                    <div class="verse">Amanecer contigo,</div>
-                    <div class="verse">sabe a domingo.</div>
-                    <div class="verse">Cupón: desayuno en cama,</div>
-                    <div class="verse">y mil te quiero.</div>
+                    <picture>
+                        <source type="image/webp" srcset="Regalo_Cupones/Dia23.webp">
+                        <img src="Regalo_Cupones/Dia23.png" alt="Arbolito tabasqueño" style="max-width: 250px; margin: 15px auto; display: block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    </picture>
+                    <div class="verse" style="margin-top: 15px;">Con amor y dedicación,</div>
+                    <div class="verse">este arbolito tabasqueño 🌳</div>
+                    <div class="verse" style="font-style: italic;">Que brote vida en tus terrenos.</div>
                 </div>
-                <div class="poem-signature">Yo llevo la bandeja.</div>
+                <div class="poem-signature">💚</div>
             </div>
         ` },
         {
